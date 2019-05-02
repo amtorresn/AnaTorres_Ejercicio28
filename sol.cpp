@@ -23,10 +23,7 @@ void solve(string filename){
     
     float dt = 0.5;
     float dx = 0.01;
-    float k = 200;
-    float C = 900;
-    float r = 2700;
-    float n = dt*k/(dx*dx*C*r);
+    float n = dt*200/(dx*dx*900*2700);
     
     int Xmax = 200;
     int Tmax = 101;
@@ -47,7 +44,7 @@ void solve(string filename){
     int t = 0;
     while(t < Tmax){
         for (int i = 1; i < Xmax-1; i++){
-            T_new[i] = T_old[i] + n*(T_old[i+1] + T_old[i+1] + 2*T_old[i]);
+            T_new[i] = T_old[i] + n*(T_old[i+1] + T_old[i-1] + 2*T_old[i]);
         }
         for (int i = 0; i < Xmax; i++){
             T_old[i] = T_new[i];
