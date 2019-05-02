@@ -5,7 +5,8 @@ from mpl_toolkits.mplot3d import Axes3D
 data = np.loadtxt("datos.dat")
 x = np.arange(0,200,1)
 y = np.arange(0,101,1)
-fig = plt.figure()
+plt.figure()
+
 
 plt.subplot(1,2,1)
 plt.imshow(data)

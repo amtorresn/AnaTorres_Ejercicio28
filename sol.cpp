@@ -29,8 +29,6 @@ void solve(string filename){
     int Tmax = 101;
     float T_old[Xmax];
     float T_new[Xmax] = {0};
-    
-    cout << n << endl;
     //Inicializa
     for (int i = 0; i < Xmax; i++){
         if(i>=80 && i <= 120){
@@ -54,7 +52,6 @@ void solve(string filename){
             
         }
         t = t + 0.5;
-        cout << t << endl;
         outfile << endl;
     }
   
