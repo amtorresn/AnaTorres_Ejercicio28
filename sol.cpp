@@ -30,6 +30,7 @@ void solve(string filename){
     float T_old[Xmax];
     float T_new[Xmax] = {0};
     
+    cout << n << endl;
     //Inicializa
     for (int i = 0; i < Xmax; i++){
         if(i>=80 && i <= 120){
@@ -44,11 +45,12 @@ void solve(string filename){
     int t = 0;
     while(t < Tmax){
         for (int i = 1; i < Xmax-1; i++){
-            T_new[i] = T_old[i] + n*(T_old[i+1] + T_old[i-1] + 2*T_old[i]);
+            T_new[i] = T_old[i] + n*(T_old[i+1] + T_old[i-1] - 2*T_old[i]);
         }
         for (int i = 0; i < Xmax; i++){
             T_old[i] = T_new[i];
             outfile << T_old[i] << " ";
+            cout << i << endl;
         }
         t += dt;
         outfile << endl;

@@ -9,13 +9,18 @@ fig = plt.figure()
 
 plt.subplot(1,2,1)
 plt.imshow(data)
+plt.xlabel("Indice X")
+plt.ylabel("Indice T")
 plt.xlim(0,200)
 
 plt.subplot(1,2,2)
 
 x = np.arange(0, 2, 0.01)
-y2 = data[0,:]
-y = data[-1,:]
-plt.plot(x,y)
-plt.plot(x,y2)
+y = data[0,:]
+y2 = data[-1,:]
+plt.plot(x,y, label = "Tiempo inicial")
+plt.plot(x,y2, label = "Tiempo final")
+plt.xlabel("Indice X")
+plt.ylabel("Temperatura")
+plt.legend()
 plt.savefig("fig.png")
